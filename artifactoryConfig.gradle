@@ -1,3 +1,15 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
+    }
+}
+
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'com.github.dcendents.android-maven'
 

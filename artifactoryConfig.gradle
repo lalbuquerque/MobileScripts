@@ -1,0 +1,54 @@
+apply plugin: "com.jfrog.artifactory"
+apply plugin: 'com.github.dcendents.android-maven'
+
+configurations {
+    published
+}
+
+task sourceJar(type: Jar) {
+    from "src/main/java"
+    classifier "sources"
+}
+
+artifactoryPublish {
+    dependsOn sourceJar
+}
+
+artifacts {
+    published sourceJar
+}
+
+artifactory {
+    contextUrl = artifactoryContextUrl   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = artifactoryPublishRepoKey
+            username = artifactoryUser // The publisher user name
+            password = artifactoryPassword // The publisher password
+            maven = true
+        }
+
+        defaults {
+            publishConfigs('archives', 'published')
+            properties = ['build.status': "$it.project.status".toString()]
+            publishPom = true //Publish generated POM files to Artifactory (true by default)
+            publishIvy = false //Publish generated Ivy descriptor files to Artifactory (true by default)
+        }
+    }
+    resolve {
+        repository {
+            repoKey = artifactoryResolveRepoKey
+            username = artifactoryUser // The resolver user name
+            password = artifactoryPassword // The resolver password
+            maven = true
+        }
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "${mavenLocalDir}")
+        }
+    }
+}

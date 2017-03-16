@@ -1,38 +1,51 @@
 apply plugin: "com.jfrog.artifactory"
-apply plugin: 'com.github.dcendents.android-maven'
-
-configurations {
-    published
-}
+apply plugin: 'maven-publish'
 
 task sourceJar(type: Jar) {
-    from "src/main/java"
-    classifier "sources"
+    from android.sourceSets.main.java.srcDirs
+    classifier "source"
 }
 
-artifactoryPublish {
-    dependsOn sourceJar
-}
+publishing {
+    publications {
+        aar(MavenPublication) {
+            groupId = project.group
+            artifactId project.name
+            artifact(sourceJar)
+            artifact "${project.buildDir}/outputs/aar/${project.name}-release.aar"
 
-artifacts {
-    published sourceJar
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                configurations.compile.allDependencies.each {
+                    if(it.group != null && (it.name != null || "unspecified".equals(it.name)) && it.version != null)
+                    {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
 }
 
 artifactory {
-    contextUrl = artifactoryContextUrl   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = artifactoryContextUrl
     publish {
         repository {
-            repoKey = artifactoryPublishRepoKey
+            // The Artifactory repository key to publish to
+            repoKey = artifactVersion.endsWith('SNAPSHOT') ? 'libs-snapshot-local' : artifactoryPublishRepoKey
             username = artifactoryUser // The publisher user name
             password = artifactoryPassword // The publisher password
             maven = true
         }
-
         defaults {
-            publishConfigs('archives', 'published')
-            properties = ['build.status': "$it.project.status".toString()]
+            publishArtifacts = true
+            publications('aar')
             publishPom = true //Publish generated POM files to Artifactory (true by default)
-            publishIvy = false //Publish generated Ivy descriptor files to Artifactory (true by default)
+            publishIvy = true //Publish generated Ivy descriptor files to Artifactory (true by default)
         }
     }
     resolve {
@@ -40,15 +53,8 @@ artifactory {
             repoKey = artifactoryResolveRepoKey
             username = artifactoryUser // The resolver user name
             password = artifactoryPassword // The resolver password
-            maven = true
         }
     }
 }
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "${mavenLocalDir}")
-        }
-    }
-}
+artifactoryPublish.dependsOn build

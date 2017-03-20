@@ -1,9 +1,10 @@
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
-task sourceJar(type: Jar, dependsOn: classes) {
+task sourceJar(type: Jar) {
+    from "src/main/java"
+    from "src/main/kotlin"
     classifier = 'sources'
-    from sourceSets.main.allSource
 }
 
 publishing {

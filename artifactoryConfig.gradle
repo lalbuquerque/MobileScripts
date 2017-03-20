@@ -1,9 +1,9 @@
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
-task sourceJar(type: Jar) {
-    from sourceSets.main.java.srcDirs
-    classifier "source"
+task sourceJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
 }
 
 publishing {

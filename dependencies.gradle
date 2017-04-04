@@ -5,10 +5,6 @@ allprojects {
 }
 
 ext {
-    application = [
-            versionCode: 83,
-            versionName: "1.18.2"
-    ]
 
     versions = [
             minSdk    : 22,

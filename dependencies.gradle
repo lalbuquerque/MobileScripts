@@ -21,6 +21,7 @@ ext {
     String rxJava = '1.2.7'
     String rxBinding = '0.4.0'
     String rxLifecycle = '0.6.1'
+    String kotlin_version = "1.1.1"
 
     dependencies = [
             support_annotations        : "com.android.support:support-annotations:$compatVersion",
@@ -74,7 +75,8 @@ ext {
             google_analytics           : "com.google.android.gms:play-services-analytics:9.0.0",
             mixpanel                   : "com.mixpanel.android:mixpanel-android:4.+",
             google_gms                 : "com.google.android.gms:play-services:9.0.0",
-            permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3"
+            permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3",
+            kotlin_std_lib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
     ]
 
 

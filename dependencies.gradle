@@ -6,8 +6,6 @@ allprojects {
 
 ext {
 
-    artifactVersion = application.versionName
-
     versions = [
             minSdk    : 22,
             targetSdk : 22,

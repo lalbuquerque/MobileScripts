@@ -27,7 +27,7 @@ ext {
     String butterKnifeVersion = "7.0.1"
     
     dependencies = [
-	androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version"            
+	androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version",            
 	barcodeDependencie         : "com.journeyapps:zxing-android-embedded:3.0.2@aar",
 	barcode                    : "net.glxn.qrgen:android:2.0",	    
 	butterknife                : "com.jakewharton:butterknife:$butterKnifeVersion",

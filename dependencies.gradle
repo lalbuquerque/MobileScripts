@@ -24,8 +24,6 @@ ext {
     String kotlin_version = "1.1.1"
     String retrofit2_version = "2.1.0"
     String androidpermissions_version = "0.1-alpha12"
-    String rxBinding = '0.4.0'
-    String rxLifecycle = '0.6.1'
     
     dependencies = [
             support_annotations        : "com.android.support:support-annotations:$compatVersion",

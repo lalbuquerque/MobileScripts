@@ -81,13 +81,7 @@ ext {
             permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3",
             kotlin_std_lib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit2_version",
-            androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version",
-            rxbinding                  : "com.jakewharton.rxbinding:rxbinding:$rxBinding",
-            rxbindingcompat            : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rxBinding",
-            rxbindingcompat_kotlin     : "com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:$rxBinding",
-            rxLifecycle                : "com.trello:rxlifecycle:$rxLifecycle",
-            rxLifecycleKotlin          : "com.trello:rxlifecycle-kotlin:$rxLifecycle",
-            rxLifecycleComponents      : "com.trello:rxlifecycle-components:$rxLifecycle"
+            androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version"
     ]
 
 

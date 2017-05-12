@@ -15,7 +15,7 @@ ext {
 
     String compatVersion = '23.1.1'
     String constraint_layout = '1.0.1'
-    String ordersVersion = '1.0.5-beta1'
+    String ordersVersion = '1.0.7-beta12'
     String productsVersion = '0.9.0'
     String rxKotlin = '1.0.0'
     String rxJava = '1.2.7'
@@ -24,6 +24,7 @@ ext {
     String kotlin_version = "1.1.1"
     String retrofit2_version = "2.1.0"
     String androidpermissions_version = "0.1-alpha12"
+    String butterKnifeVersion = "7.0.1"
     
     dependencies = [
             support_annotations        : "com.android.support:support-annotations:$compatVersion",
@@ -33,9 +34,10 @@ ext {
             cardview                   : "com.android.support:cardview-v7:$compatVersion",
             support_v4                 : "com.android.support:support-v4:$compatVersion",
             support_design             : "com.android.support:design:$compatVersion",
-            butterknife                : "com.jakewharton:butterknife:7.0.1",
+            butterknife                : "com.jakewharton:butterknife:$butterKnifeVersion",
+            butterknife_compiler       : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
             calligraphy                : "uk.co.chrisjenx:calligraphy:2.2.0",
-            cieloMobilePaymentConnector: "br.com.m4u.payment.connector:android-cielo-mobile-payment-connector:1.7.2",
+            cieloMobilePaymentConnector: "br.com.m4u.payment.connector:android-cielo-mobile-payment-connector:1.7.3",
             dagger2_compiler           : "com.google.dagger:dagger-compiler:2.2",
             dagger2                    : "com.google.dagger:dagger:2.2",
             jsr250                     : "javax.annotation:jsr250-api:1.0",
@@ -57,7 +59,6 @@ ext {
             productsLocalRealm         : "cielo.products:local-realm-repository:$productsVersion",
             productsRemoteRetrofit     : "cielo.products:remote-retrofit-repository:$productsVersion",
             favor                      : "com.cocosw:favor:0.2.0@aar",
-            retrofit                   : "com.squareup.retrofit2:retrofit:2.0.0-beta3",
             orders                     : "cielo.orders:domain:$ordersVersion",
             ordersLocalRealm           : "cielo.orders:local-repository-realm:$ordersVersion",
             ordersLocalMemory          : "cielo.orders:local-repository-memory:$ordersVersion",

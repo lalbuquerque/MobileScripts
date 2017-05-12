@@ -24,6 +24,8 @@ ext {
     String kotlin_version = "1.1.1"
     String retrofit2_version = "2.1.0"
     String androidpermissions_version = "0.1-alpha12"
+    String rxBinding = '0.4.0'
+    String rxLifecycle = '0.6.1'
     
     dependencies = [
             support_annotations        : "com.android.support:support-annotations:$compatVersion",
@@ -81,7 +83,13 @@ ext {
             permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3",
             kotlin_std_lib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
             retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit2_version",
-            androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version"
+            androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version",
+            rxbinding                  : "com.jakewharton.rxbinding:rxbinding:$rxBinding",
+            rxbindingcompat            : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rxBinding",
+            rxbindingcompat_kotlin     : "com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:$rxBinding",
+            rxLifecycle                : "com.trello:rxlifecycle:$rxLifecycle",
+            rxLifecycleKotlin          : "com.trello:rxlifecycle-kotlin:$rxLifecycle",
+            rxLifecycleComponents      : "com.trello:rxlifecycle-components:$rxLifecycle"
     ]
 
 

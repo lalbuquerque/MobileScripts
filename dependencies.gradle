@@ -22,6 +22,7 @@ ext {
     String rxBinding = '0.4.0'
     String rxLifecycle = '0.6.1'
     String kotlin_version = "1.1.1"
+    String retrofit2_version = "2.1.0"
 
     dependencies = [
             support_annotations        : "com.android.support:support-annotations:$compatVersion",
@@ -78,6 +79,7 @@ ext {
             google_gms                 : "com.google.android.gms:play-services:9.0.0",
             permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3",
             kotlin_std_lib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit2_version"
     ]
 
 

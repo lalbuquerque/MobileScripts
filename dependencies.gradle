@@ -38,7 +38,7 @@ ext {
 	certificatePinner          : "cielo.certificatepinner:certificate-pinner:1.0.3",
 	cielo_auth                 : "cielo.auth:library:0.7.0",
 	cieloLogger                : "cielo.logging:logger-library:1.0.1",
-	cieloMobilePaymentConnector: "br.com.m4u.payment.connector:android-cielo-mobile-payment-connector:1.7.4",
+	cieloMobilePaymentConnector: "br.com.m4u.payment.connector:android-cielo-mobile-payment-connector:1.7.5",
 	constraint_layout          : "com.android.support.constraint:constraint-layout:$constraint_layout",
 	crashlytics                : "com.crashlytics.sdk.android:crashlytics:2.5.7@aar", 	    
 	dagger2_compiler           : "com.google.dagger:dagger-compiler:2.2",

@@ -23,7 +23,7 @@ ext {
     String rxLifecycle = '0.6.1'
     String kotlin_version = "1.1.1"
     String retrofit2_version = "2.1.0"
-    String androidpermissions_version = "0.1-alpha14"
+    String androidpermissions_version = "0.1-alpha12"
     String butterKnifeVersion = "7.0.1"
     
     dependencies = [

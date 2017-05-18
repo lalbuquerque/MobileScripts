@@ -1,0 +1,98 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+
+    versions = [
+            minSdk    : 22,
+            targetSdk : 22,
+            compileSdk: 25,
+            buildTools: "25.0.0"
+    ]
+
+    String compatVersion = '23.1.1'
+    String constraint_layout = '1.0.1'
+    String ordersVersion = '1.0.7-beta14'
+    String productsVersion = '0.9.0'
+    String rxKotlin = '1.0.0'
+    String rxJava = '1.2.7'
+    String rxBinding = '0.4.0'
+    String rxLifecycle = '0.6.1'
+    String kotlin_version = "1.1.1"
+    String retrofit2_version = "2.1.0"
+    String androidpermissions_version = "0.1-alpha12"
+    String butterKnifeVersion = "7.0.1"
+    
+    dependencies = [
+	androidpermissions_library : "cielo.androidpermissions:library:$androidpermissions_version",            
+	barcodeDependencie         : "com.journeyapps:zxing-android-embedded:3.0.2@aar",
+	barcode                    : "net.glxn.qrgen:android:2.0",	    
+	butterknife                : "com.jakewharton:butterknife:$butterKnifeVersion",
+	butterknife_compiler       : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
+	calculator                 : "cielo.calculator:library:0.2.7",
+	calligraphy                : "uk.co.chrisjenx:calligraphy:2.2.0",	    
+	cardview                   : "com.android.support:cardview-v7:$compatVersion",   	    
+	certificatePinner          : "cielo.certificatepinner:certificate-pinner:1.0.3",
+	cielo_auth                 : "cielo.auth:library:0.7.0",
+	cieloLogger                : "cielo.logging:logger-library:1.0.1",
+	cieloMobilePaymentConnector: "br.com.m4u.payment.connector:android-cielo-mobile-payment-connector:1.7.6",
+	constraint_layout          : "com.android.support.constraint:constraint-layout:$constraint_layout",
+	crashlytics                : "com.crashlytics.sdk.android:crashlytics:2.5.7@aar", 	    
+	dagger2_compiler           : "com.google.dagger:dagger-compiler:2.2",
+	dagger2                    : "com.google.dagger:dagger:2.2",
+	deviceKeyProvider          : "cielo.devicekey:provider:1.3.5",
+	favor                      : "com.cocosw:favor:0.2.0@aar",
+	google_analytics           : "com.google.android.gms:play-services-analytics:9.0.0",
+	google_gms                 : "com.google.android.gms:play-services:9.0.0",
+	gson                       : "com.google.code.gson:gson:2.4",
+	gson_converter              : "com.squareup.retrofit2:converter-gson:$retrofit2_version",
+	inboxRemote                : "cielo.inbox:remote-retrofit-repository:0.3.0",	    
+	jsr250                     : "javax.annotation:jsr250-api:1.0",
+	kotlin_std_lib           : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+	merchant                   : "cielo.merchant:domain:0.0.1",
+	mixpanel                   : "com.mixpanel.android:mixpanel-android:4.+",
+	multidex                   : "com.android.support:multidex:1.0.0",
+	orders                     : "cielo.orders:domain:$ordersVersion",
+	ordersLocalRealm           : "cielo.orders:local-repository-realm:$ordersVersion",
+	ordersLocalMemory          : "cielo.orders:local-repository-memory:$ordersVersion",
+	ordersRemoteRetrofit       : "cielo.orders:remote-repository-retrofit:$ordersVersion",
+	ordersSyncManager          : "cielo.orders:synchronization-manager:$ordersVersion",
+	ordersAidl                 : "cielo.orders:aidl:$ordersVersion",
+	products                   : "cielo.products:domain:$productsVersion",
+	productsLocalRealm         : "cielo.products:local-realm-repository:$productsVersion",
+	productsRemoteRetrofit     : "cielo.products:remote-retrofit-repository:$productsVersion",
+	promoEcouponService        : "cielo.promo.ecoupon:service:1.1.26",
+	permissionsSdk             : "cielo.permissions.sdk:sdk:0.3-alpha3",
+	retrofitRxJava             : "com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4",
+	recyclerView               : "com.android.support:recyclerview-v7:$compatVersion",	    
+	retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit2_version",   
+	rxkotlin                   : "io.reactivex:rxkotlin:$rxKotlin",
+	rxjava                     : "io.reactivex:rxjava:$rxJava",
+	rxandroid                  : "io.reactivex:rxandroid:1.2.1",
+	rxbinding                  : "com.jakewharton.rxbinding:rxbinding:$rxBinding",
+	rxbindingcompat            : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rxBinding",
+	rxbindingcompat_kotlin     : "com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:$rxBinding",
+	rxLifecycle                : "com.trello:rxlifecycle:$rxLifecycle",
+	rxLifecycleKotlin          : "com.trello:rxlifecycle-kotlin:$rxLifecycle",
+	rxLifecycleComponents      : "com.trello:rxlifecycle-components:$rxLifecycle",
+	support_annotations        : "com.android.support:support-annotations:$compatVersion",
+	support_v7                 : "com.android.support:appcompat-v7:$compatVersion",
+	support_v4                 : "com.android.support:support-v4:$compatVersion",
+	support_design             : "com.android.support:design:$compatVersion",
+	splunkMint                 : "com.splunk.mint:mint:5.0.0"
+    ]
+
+
+    testDependencies = [
+            junit       : 'junit:junit:4.12',
+            mockito     : 'org.mockito:mockito-core:1.+',
+            hamcrest    : 'org.hamcrest:hamcrest-library:1.3',
+            junit_runner: 'com.android.support.test:runner:0.5',
+            junit_rules : 'com.android.support.test:rules:0.5',
+            espresso    : 'com.android.support.test.espresso:espresso-core:2.2.2',
+            uiautomator : 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    ]
+}

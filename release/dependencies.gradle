@@ -15,7 +15,7 @@ ext {
 
     String compatVersion = '23.1.1'
     String constraint_layout = '1.0.1'
-    String ordersVersion = '1.0.8-beta1'
+    String ordersVersion = '1.0.8-beta2'
     String productsVersion = '0.9.0'
     String rxKotlin = '1.0.0'
     String rxJava = '1.2.7'
